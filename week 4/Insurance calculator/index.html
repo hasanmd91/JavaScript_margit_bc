@@ -8,22 +8,22 @@
     <title>Document</title>
   </head>
   <body>
-    <section>
-      <div id="container" class="container">
+    <div class="container">
+      <div class="form">
         <form>
-          <div class="section">
+          <div class="info">
             <h1>Your Insurance calculator</h1>
             <div>
               <label for="name"> Name</label>
               <input type="text" id="name" value="" />
             </div>
             <div>
-              <label for="age"> Age</label>
+              <label for="age"> Age </label>
               <input type="number" id="age" value="" />
             </div>
           </div>
 
-          <div class="section">
+          <div>
             <h3>Current health condition</h3>
             <div>
               <label for="Hypertension">Hypertension</label>
@@ -34,6 +34,7 @@
                 class="health"
               />
             </div>
+
             <div>
               <label for="Blood_sugar">Blood sugar</label>
               <input type="checkbox" id="Blood_sugar" value="" class="health" />
@@ -44,7 +45,7 @@
             </div>
           </div>
 
-          <div class="section">
+          <div>
             <h3>Good Habits</h3>
             <div>
               <label for="exercise">Exercise</label>
@@ -55,6 +56,7 @@
                 class="Good_Habits"
               />
             </div>
+
             <div>
               <label for="walking">Walking</label>
               <input
@@ -75,7 +77,7 @@
             </div>
           </div>
 
-          <div class="section">
+          <div>
             <h3>Bad Habits</h3>
             <div>
               <label for="Smoking">Smoking</label>
@@ -93,9 +95,8 @@
           <input type="submit" value=" calculate" id="submit_button" />
         </form>
       </div>
-      <div id="result" class="section"></div>
-    </section>
-
+      <div class="result"></div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

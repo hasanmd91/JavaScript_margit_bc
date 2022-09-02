@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const result = document.querySelector("#result");
+const result = document.querySelector(".result");
 const Customer = document.getElementById("name");
 const age = document.getElementById("age");
 let Customerhealth = document.querySelectorAll(".health");
@@ -60,10 +60,13 @@ const calculateInsurance = (event) => {
 
   console.log(ínsuranceScore);
 
-  result.innerHTML = `Name : <span> ${customerName} </span> Your insurance score is: <span> ${ínsuranceScore.toFixed(
-    0
-  )} </span>  `;
+  result.innerHTML = `
+  <div class ="result_output">  <p> Name : <span> ${customerName} </span> </p> 
+  Your insurance score is: <span> ${ínsuranceScore.toFixed(0)} </span>  </div>
+  
+ `;
   event.preventDefault();
+  form.reset();
 };
 
 form.addEventListener("submit", calculateInsurance);
