@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Temperature Converter</h1>
+      <form>
+        <div>
+          <label for="celsius"> celsiusCelsius</label>
+          <input
+            name="celsius"
+            id="celsius"
+            class="input"
+            type="number"
+            placeholder="celsius "
+            onchange="calculator(this.value, this.id)"
+            oninput="calculator(this.value, this.id)"
+          />
+        </div>
+
+        <div>
+          <label for="fahrenheit">Fahreheit </label>
+          <input
+            name="fahrenheit"
+            id="fahrehenit"
+            class="input"
+            type="number"
+            placeholder="fahrehenit "
+            value=""
+            onchange="calculator(this.value,this.id )"
+            oninput="calculator(this.value, this.id)"
+          />
+        </div>
+
+        <div>
+          <label for="kelvin">kelvin </label>
+          <input
+            name="kelvin"
+            id="kelvin"
+            class="input"
+            type="number"
+            placeholder="kelvin "
+            value=""
+            onchange="calculator(this.value, this.id)"
+            oninput="calculator(this.value,this.id)"
+          />
+        </div>
+
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

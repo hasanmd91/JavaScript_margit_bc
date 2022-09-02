@@ -1,0 +1,25 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+body {
+  font-family: sans-serif;
+  color: orange;
+}
+h1 {
+  font-weight: bolder;
+  color: cadetblue;
+}
+
+.container {
+  margin: 50px;
+  width: 600px;
+}
+
+button {
+  margin-top: 12px;
+  border-radius: 2px;
+  border: none;
+  padding: 5px;
+  width: 60px;
+  background: orange;
+  cursor: pointer;
+}

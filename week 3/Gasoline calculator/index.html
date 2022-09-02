@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>calculator</title>
+  </head>
+  <body>
+    <section class="gasContainer">
+      <form>
+        <label for="Money"> Price: </label>
+        <input
+          id="Money"
+          class="input is-primary"
+          type="number"
+          placeholder="Enter price"
+          value=""
+        />
+
+        <label for="Amount"> Money: </label>
+        <input
+          id="Amount"
+          class="input is-primary"
+          type="number"
+          placeholder="Enter amount "
+          value=""
+        />
+
+        <button id="button" class="button is-success is-hovered" type="submit">
+          calculate
+        </button>
+
+        <button
+          id="Resetbutton"
+          class="button is-success is-hovered"
+          type="reset"
+        >
+          reset
+        </button>
+
+        <p id="message"></p>
+      </form>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

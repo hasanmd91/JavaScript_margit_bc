@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <img src="./images/pexels-engin-akyurt-2260555.jpg" />
+      </div>
+    </header>
+    <div class="container">
+      <div class="formContainer">
+        <form id="form">
+          <h1>Order Your pizza</h1>
+          <div class="info">
+            <label for="customerName"> Your Name : </label>
+            <input type="text" id="customerName" required />
+          </div>
+
+          <h3>Select Pizza</h3>
+          <div>
+            <label for="pizza2"> Pizza for two</label>
+            <span> €7.50 </span>
+            <input type="radio" name="pizza" id="for2" />
+          </div>
+          <div>
+            <label for="pizza4"> Pizza for four</label>
+            <span> €10.50 </span>
+            <input type="radio" name="pizza" id="for4" />
+          </div>
+          <div>
+            <label for="pizza6"> Pizza for six </label>
+            <span> €12.50 </span>
+            <input type="radio" name="pizza" id="for6" />
+          </div>
+          <div>
+            <label for="pizza8"> Pizza for eight</label>
+            <span> €15.50 </span>
+            <input type="radio" name="pizza" id="for8" />
+          </div>
+
+          <div>
+            <h3>Select ingredients</h3>
+            <div>
+              <label>kana </label>
+              <input type="checkbox" id="kana" />
+            </div>
+            <div>
+              <label>kala </label>
+              <input type="checkbox" id="kala" />
+            </div>
+            <div>
+              <label>Ananas </label>
+              <input type="checkbox" id="Ananas" />
+            </div>
+            <div>
+              <label>Tomato </label>
+              <input type="checkbox" id="Tomato" />
+            </div>
+            <div>
+              <label>Cheese</label>
+              <input type="checkbox" id="Chees" />
+            </div>
+            <div>
+              <label>kebab </label>
+              <input type="checkbox" id="kebab" />
+            </div>
+            <div>
+              <label>salami </label>
+              <input type="checkbox" id="salami" />
+            </div>
+            <div>
+              <label>kanamuna </label>
+              <input type="checkbox" id="kanamuna" />
+            </div>
+            <div>
+              <label>Tonnikala </label>
+              <input type="checkbox" id="Tonnikala" />
+            </div>
+            <div>
+              <label>Mozzarella</label>
+              <input type="checkbox" id="Mozzarella" />
+            </div>
+          </div>
+
+          <div>
+            <h3>Choose your delivery method</h3>
+            <label for="deliveryMethod"> </label>
+            <select id="deliveryMethod" name="deliveryMethod">
+              <option>Select</option>
+              <option id="Home delivery" value="5">Home delivery +5€</option>
+              <option id="eat in" value="0">Eat in +0€</option>
+              <option id="pickup" value="0">Pick up +0€</option>
+            </select>
+          </div>
+          <button type="submit">Order</button>
+        </form>
+      </div>
+      <div class="orderdetails" id="orderdetails"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

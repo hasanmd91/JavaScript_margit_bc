@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div id="container" class="container">
+        <form>
+          <div class="section">
+            <h1>Your Insurance calculator</h1>
+            <div>
+              <label for="name"> Name</label>
+              <input type="text" id="name" value="" />
+            </div>
+            <div>
+              <label for="age"> Age</label>
+              <input type="number" id="age" value="" />
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Current health condition</h3>
+            <div>
+              <label for="Hypertension">Hypertension</label>
+              <input
+                type="checkbox"
+                id="Hypertension"
+                value=""
+                class="health"
+              />
+            </div>
+            <div>
+              <label for="Blood_sugar">Blood sugar</label>
+              <input type="checkbox" id="Blood_sugar" value="" class="health" />
+            </div>
+            <div>
+              <label for="Overweight">Overweight</label>
+              <input type="checkbox" id="Overweight" value="" class="health" />
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Good Habits</h3>
+            <div>
+              <label for="exercise">Exercise</label>
+              <input
+                type="checkbox"
+                id="exercise"
+                value=""
+                class="Good_Habits"
+              />
+            </div>
+            <div>
+              <label for="walking">Walking</label>
+              <input
+                type="checkbox"
+                id="walking"
+                value=""
+                class="Good_Habits"
+              />
+            </div>
+            <div>
+              <label for="swimming">Swimming</label>
+              <input
+                type="checkbox"
+                id="swimming"
+                value=""
+                class="Good_Habits"
+              />
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Bad Habits</h3>
+            <div>
+              <label for="Smoking">Smoking</label>
+              <input type="checkbox" id="Smoking" value="" class="bad_habits" />
+            </div>
+            <div>
+              <label for="Alcohol">Alcohol</label>
+              <input type="checkbox" id="Alcohol" value="" class="bad_habits" />
+            </div>
+            <div>
+              <label for="Drugs">Drugs</label>
+              <input type="checkbox" id="Drugs" value="" class="bad_habits" />
+            </div>
+          </div>
+          <input type="submit" value=" calculate" id="submit_button" />
+        </form>
+      </div>
+      <div id="result" class="section"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
