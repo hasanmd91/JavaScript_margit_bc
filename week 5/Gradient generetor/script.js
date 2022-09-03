@@ -2,8 +2,9 @@ let inputFirst = document.getElementById("input1");
 let inputSecond = document.getElementById("input2");
 let buttons = document.querySelectorAll("label");
 let display = document.querySelector(".container");
-let color1;
-let color2;
+let code = document.querySelector(".rgbCode");
+let color1 = "#ffffff";
+let color2 = "#ffffff";
 let gradientPosition = "";
 
 inputFirst.addEventListener("input", () => {
@@ -17,7 +18,7 @@ inputSecond.addEventListener("input", () => {
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     gradientPosition = button.id;
-    display.style.backgorundImage = `linear-gradient(${gradientPosition}, ${color1}, ${color2})`;
-    console.log(`linear-gradient(${gradientPosition}, ${color1}, ${color2})`);
+    display.style.backgroundImage = `linear-gradient(${gradientPosition}, ${color1}, ${color2})`;
+    code.innerHTML = ` <p> linear-gradient:<span> ${gradientPosition} </span>  <span> ${color1} </span>  <span> ${color2} </span></p>`;
   });
 });
