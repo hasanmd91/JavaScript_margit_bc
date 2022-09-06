@@ -7,8 +7,8 @@
 }
 
 :root {
-  --Background-color: rgba(48, 56, 76, 0.656);
-  --button: cadetblue;
+  --Background-color: rgba(17, 17, 229, 0.656);
+  --button: rgb(12, 173, 188);
 }
 
 body {
@@ -40,6 +40,7 @@ body {
   grid-column: 1/5;
   min-height: 60vh;
   margin: 4rem 6rem;
+  min-height: 600px;
 }
 .inputField > form {
   display: inline;
