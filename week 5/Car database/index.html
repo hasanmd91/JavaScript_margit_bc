@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Car database</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="search">
+        <h1>Search car by licence number</h1>
+        <input type="text" id="licence_number" />
+        <button>Search</button>
+      </div>
+      <div class="inputField">
+        <form>
+          <h1>Insert car data</h1>
+
+          <div>
+            <label for="plate">Licence number</label>
+            <input type="text" id="plate" />
+          </div>
+
+          <div>
+            <label for="carMaker">Car maker</label>
+            <input type="text" id="carMaker" />
+          </div>
+
+          <div>
+            <label for="carModel">Car model </label>
+            <input type="text" id="carModel" />
+          </div>
+
+          <div>
+            <label for="carOwner">Car owner</label>
+            <input type="text" id="carOwner" />
+          </div>
+
+          <div>
+            <label for="carPrice">Car price</label>
+            <input type="text" id="carPrice" />
+          </div>
+
+          <div>
+            <label for="carColor">Car color</label>
+            <input type="text" id="carColor" />
+          </div>
+          <div>
+            <button type="submit">Add car</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="database"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

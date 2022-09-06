@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Montserrat&family=Roboto&family=Satisfy&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --Background-color: rgba(76, 48, 48, 0.656);
+  --button: cadetblue;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+}
+
+.search {
+  grid-column: 1/-1;
+  height: 30vh;
+  display: block;
+}
+
+.inputField {
+  grid-column: 1/5;
+  height: 70vh;
+  margin: 0 6rem;
+}
+.inputField > form {
+  display: inline;
+}
+
+form > h1 {
+  margin-bottom: 3rem;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button);
+  padding: 0.8rem;
+  width: 5rem;
+  margin: 15px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  border: 1px solid rgb(208, 192, 192);
+  padding: 5px;
+  border-radius: 3px;
+  margin: 10px 0px;
+}
+
+label {
+  width: 200px;
+  display: inline-block;
+}
+
+.database {
+  grid-column: 5/14;
+}
