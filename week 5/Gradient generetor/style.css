@@ -3,23 +3,11 @@
   margin: 0%;
   padding: 0%;
 }
-body {
-  font-size: larger;
-  font-weight: 500;
-  line-height: 2rem;
-}
 
 .container {
   height: 100vh;
   display: flex;
-  background-image: linear-gradient(to top, #f2e2e2, #f6f0f0);
-  flex-wrap: wrap;
-}
-
-.input-container {
-  text-align: center;
-  font-size: 2rem;
-  color: orange;
+  background-image: linear-gradient(to top, #009dff, #195ce1);
 }
 
 input[type="color"] {
@@ -29,21 +17,29 @@ input[type="color"] {
   border: 1px solid black;
   border-radius: 4px;
   padding: 5px;
-  margin: 5px;
+  margin: 2rem 0.7rem;
 }
 
 .left_container {
   height: 100vh;
   background-color: aliceblue;
-  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-basis: 25%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 0;
 }
 
 .buttons {
-  margin-top: 5rem;
+  margin: 3rem 0;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -67,8 +63,8 @@ input[type="color"] {
 }
 
 label img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -82,12 +78,12 @@ input[type="radio"] {
 }
 
 .rgbCode {
-  margin-top: 5rem;
-  color: orange;
+  margin-top: 3rem;
+  color: rgb(28, 27, 25);
 }
 
 .rgbCode span {
   font-weight: bolder;
   margin-right: 6px;
-  color: rgb(201, 148, 49);
+  color: rgb(43, 41, 39);
 }

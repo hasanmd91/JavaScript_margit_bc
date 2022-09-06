@@ -3,8 +3,8 @@ let inputSecond = document.getElementById("input2");
 let buttons = document.querySelectorAll("label");
 let display = document.querySelector(".container");
 let code = document.querySelector(".rgbCode");
-let color1 = "#ffffff";
-let color2 = "#ffffff";
+let color1 = "#009dff";
+let color2 = "#195ce1";
 let gradientPosition = "";
 
 inputFirst.addEventListener("input", () => {
