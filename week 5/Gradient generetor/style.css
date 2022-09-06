@@ -7,7 +7,11 @@
 .container {
   height: 100vh;
   display: flex;
-  background-image: linear-gradient(to top, #009dff, #195ce1);
+  background-image: linear-gradient(
+    to top,
+    rgb(250, 250, 110),
+    rgb(196, 236, 116)
+  );
 }
 
 input[type="color"] {
