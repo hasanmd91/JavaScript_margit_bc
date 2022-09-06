@@ -7,7 +7,7 @@
 }
 
 :root {
-  --Background-color: rgba(76, 48, 48, 0.656);
+  --Background-color: rgba(48, 56, 76, 0.656);
   --button: cadetblue;
 }
 
@@ -20,19 +20,26 @@ body {
 #container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1px;
 }
 
 .search {
   grid-column: 1/-1;
-  height: 30vh;
-  display: block;
+  height: 40vh;
+  border-top: 3rem solid var(--Background-color);
+  border-bottom: 3rem solid var(--Background-color);
+}
+.search > div {
+  width: 50%;
+  margin: 1rem 0 0 5rem;
+}
+.search > input {
+  display: inline-block;
 }
 
 .inputField {
   grid-column: 1/5;
-  height: 70vh;
-  margin: 0 6rem;
+  min-height: 60vh;
+  margin: 4rem 6rem;
 }
 .inputField > form {
   display: inline;
@@ -51,6 +58,10 @@ button {
   margin: 15px 0;
   font-weight: 600;
   cursor: pointer;
+}
+button:hover {
+  background-color: var(--Background-color);
+  color: aliceblue;
 }
 
 input[type="text"] {
