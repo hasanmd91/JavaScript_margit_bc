@@ -7,8 +7,8 @@
 }
 
 :root {
-  --Background-color: rgba(7, 71, 96, 0.656);
-  --button: rgb(12, 173, 188);
+  --Background-color: cadetblue;
+  --button: rgb(28, 108, 113);
   --text-color: white;
 }
 
@@ -73,14 +73,14 @@ label {
 }
 
 .inputField {
-  margin: 4rem 5rem;
+  margin: 1rem 5rem;
 }
 .inputField > form {
   display: inline;
 }
 
 .database {
-  margin: 4rem 5rem;
+  margin: 1rem 5rem;
 }
 
 .table {
