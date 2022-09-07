@@ -7,8 +7,9 @@
 }
 
 :root {
-  --Background-color: rgba(17, 17, 229, 0.656);
+  --Background-color: rgba(7, 71, 96, 0.656);
   --button: rgb(12, 173, 188);
+  --text-color: white;
 }
 
 body {
@@ -18,36 +19,13 @@ body {
 }
 
 #container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100vw;
 }
-
-.search {
-  grid-column: 1/-1;
-  height: 40vh;
-  border-top: 3rem solid var(--Background-color);
-  border-bottom: 3rem solid var(--Background-color);
-}
-.search > div {
-  width: 50%;
-  margin: 1rem 0 0 5rem;
-}
-.search > input {
-  display: inline-block;
-}
-
-.inputField {
-  grid-column: 1/5;
-  min-height: 60vh;
-  margin: 4rem 6rem;
-  min-height: 600px;
-}
-.inputField > form {
-  display: inline;
-}
-
-form > h1 {
+h1 {
   margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 button {
@@ -67,7 +45,7 @@ button:hover {
 
 input[type="text"] {
   border: 1px solid rgb(208, 192, 192);
-  padding: 5px;
+  padding: 10px;
   border-radius: 3px;
   margin: 10px 0px;
 }
@@ -77,6 +55,62 @@ label {
   display: inline-block;
 }
 
+.search {
+  flex-basis: 100%;
+  border-top: 3rem solid var(--Background-color);
+  border-bottom: 3rem solid var(--Background-color);
+}
+.search > div {
+  margin-left: 5rem;
+  padding: 20px;
+}
+
+.search > input {
+  display: inline-block;
+}
+
+.inputField {
+  width: 30%;
+  margin: 4rem 3rem;
+}
+.inputField > form {
+  display: inline;
+}
+
 .database {
-  grid-column: 5/14;
+  width: 30%;
+  margin: 4rem 3rem;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9rem;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+
+.table thead tr {
+  background-color: var(--Background-color);
+  color: var(--text-color);
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--Background-color);
 }
