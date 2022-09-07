@@ -1,7 +1,19 @@
 const form = document.getElementById("form");
 const tdbody = document.getElementById("data");
+const searchResult = document.getElementById("showSearch");
+
 const carDatas = [];
 let count = 0;
+
+const searchPlate = () => {
+  const search = document.getElementById("search").value;
+  carDatas.find((res) => {
+    if (res.plate === search) {
+      searchResult.innerHTML = `Licence number ${res.plate} is ${res.carMaker} ${res.carModel} and it belongs to ${res.carOwner}; `;
+    } else
+      searchResult.innerText = `There is no car with that licence plate added to the systeam. Try again? `;
+  });
+};
 
 class Car {
   constructor(plate, carMaker, carModel, carOwner, carPrice, carColor) {

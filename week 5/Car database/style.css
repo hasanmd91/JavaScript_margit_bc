@@ -70,16 +70,14 @@ label {
 }
 
 .inputField {
-  width: 30%;
-  margin: 4rem 3rem;
+  margin: 4rem 5rem;
 }
 .inputField > form {
   display: inline;
 }
 
 .database {
-  width: 30%;
-  margin: 4rem 3rem;
+  margin: 4rem 5rem;
 }
 
 .table {
