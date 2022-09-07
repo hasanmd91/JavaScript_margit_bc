@@ -17,6 +17,9 @@ body {
   line-height: 2rem;
   font-weight: 500;
 }
+p {
+  font-weight: 700;
+}
 
 #container {
   display: flex;
