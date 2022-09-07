@@ -7,14 +7,13 @@ let count = 0;
 
 const searchPlate = () => {
   const search = document.getElementById("search").value;
-  if (search.length > 1) {
-    carDatas.find((res) => {
-      if (res.plate === search) {
-        searchResult.innerHTML = `Licence number ${res.plate} is ${res.carMaker} ${res.carModel} and it belongs to ${res.carOwner}; `;
-      } else
-        searchResult.innerText = `There is no car with that licence plate added to the systeam. Try again? `;
-    });
-  } else searchResult.innerText = `Enter valid number plate!`;
+
+  const res = carDatas.find((datas) => datas.plate === search);
+  if (res) {
+    searchResult.innerHTML = `Licence number ${res.plate} is ${res.carMaker} ${res.carModel} and it belongs to ${res.carOwner}; `;
+  } else {
+    searchResult.innerText = `There is no car with that licence plate added to the systeam. Try again? `;
+  }
 };
 
 class Car {
@@ -29,7 +28,7 @@ class Car {
 }
 
 form.addEventListener("submit", (e) => {
-  const plate = document.getElementById("plate").value;
+  let plate = document.getElementById("plate").value;
   const carMaker = document.getElementById("carMaker").value;
   const carModel = document.getElementById("carModel").value;
   const carOwner = document.getElementById("carOwner").value;
@@ -60,5 +59,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-//  console.log(plate, carMaker, carModel, carOwner, carPrice, carColor);
-//document.getElementById("data").innerHTML = ``;
+/*   carDatas.map((res) => {
+    console.log(res);
+    res.plate === search
+      ? (searchResult.innerHTML = `Licence number ${res.plate} is ${res.carMaker} ${res.carModel} and it belongs to ${res.carOwner}; `)
+      : (searchResult.innerText = `There is no car with that licence plate added to the systeam. Try again? `);
+  });  */
