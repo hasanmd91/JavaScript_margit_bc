@@ -58,10 +58,3 @@ form.addEventListener("submit", (e) => {
   }
   e.preventDefault();
 });
-
-/*   carDatas.map((res) => {
-    console.log(res);
-    res.plate === search
-      ? (searchResult.innerHTML = `Licence number ${res.plate} is ${res.carMaker} ${res.carModel} and it belongs to ${res.carOwner}; `)
-      : (searchResult.innerText = `There is no car with that licence plate added to the systeam. Try again? `);
-  });  */
