@@ -1,5 +1,7 @@
 const form = document.getElementById("form");
+const tdbody = document.getElementById("data");
 const carDatas = [];
+let count = 0;
 
 class Car {
   constructor(plate, carMaker, carModel, carOwner, carPrice, carColor) {
@@ -29,19 +31,18 @@ form.addEventListener("submit", (e) => {
     carColor
   );
   carDatas.push(carDetails);
-  console.log(carDetails);
 
-  for (let i = 0; i < carDatas.length; i++) {
-    document.getElementById(
-      "data"
-    ).innerHTML = ` <td>${carDatas[i].plate}  </td>
-     <td>${carDatas[i].carMaker}  </td>
-     <td>${carDatas[i].carModel}  </td>
-     <td>${carDatas[i].carOwner}  </td>
-     <td>${carDatas[i].carPrice}  </td>
-     <td>${carDatas[i].carColor}  </td>`;
+  for (let i = count; i < carDatas.length; i++) {
+    document.getElementById("data").innerHTML += document.createElement(
+      "tr"
+    ).innerHTML = `<td>${carDatas[i].plate}  </td>
+    <td>${carDatas[i].carMaker}  </td>
+    <td>${carDatas[i].carModel}  </td>
+    <td>${carDatas[i].carOwner}  </td>
+    <td>${carDatas[i].carPrice}  </td>
+    <td>${carDatas[i].carColor}  </td> `;
+    count++;
   }
-
   e.preventDefault();
 });
 
