@@ -2,6 +2,8 @@ const startButton = document.querySelector("#start");
 const endButton = document.querySelector("#end");
 const circles = document.querySelectorAll(".circle");
 const score = document.querySelector("#score");
+const overlay = document.querySelector("#overlay");
+const result = document.querySelector("#result");
 
 let active = 0;
 let timer;
@@ -13,10 +15,11 @@ let scores = 0;
 
 const clickCount = (index) => {
   if (index != active) {
-    console.log("gameover");
+    endGame();
   } else {
     scores++;
-    console.log(scores);
+    rounds--;
+    result.textContent = scores;
   }
 };
 
@@ -42,17 +45,23 @@ const pickNew = () => {
 };
 
 const gameStart = () => {
+  endButton.style.display = "initial";
+  startButton.style.display = "none";
+
   let nextActive = pickNew(active);
   circles[nextActive].classList.toggle("active");
   circles[active].classList.remove("active");
   active = nextActive;
   timer = setTimeout(gameStart, speed);
+  speed -= 10;
+  rounds++;
 };
 
 // start game function ends
 
 const endGame = () => {
-  console.log("first");
+  overlay.style.visibility = "visible";
+  clearTimeout(timer);
 };
 
 startButton.addEventListener("click", gameStart);

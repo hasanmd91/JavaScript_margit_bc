@@ -54,15 +54,18 @@ h1 {
   background-color: rgb(201, 157, 75);
 }
 
-.overlay {
+#end {
+  display: none;
+}
+
+#overlay {
   visibility: hidden;
   position: fixed;
-  padding: 200px;
-  left: 200px;
-  right: 200px;
   font-size: 50px;
-  background: rgb(34, 25, 25);
+  background: rgba(255, 165, 0, 0.73);
   justify-content: center;
   text-align: center;
   color: rgb(255, 255, 255);
+  padding: 200px;
+  border-radius: 10px;
 }

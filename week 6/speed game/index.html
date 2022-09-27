@@ -11,9 +11,9 @@
     <div class="conatiner">
       <div class="game">
         <h1>Speed Game</h1>
-        <h4>Your score is: <span id="result"> </span></h4>
+        <h4>Your score is: <span id="score"> 0</span></h4>
         <div class="circleConatiner">
-          <button class="circle active"></button>
+          <button class="circle"></button>
           <button class="circle"></button>
           <button class="circle"></button>
           <button class="circle"></button>
@@ -22,12 +22,15 @@
         <button class="play" id="start">Start Game</button>
         <button class="play" id="end">End Game</button>
       </div>
-      <div class="overlay">
-        <h3>Game over</h3>
-        <p>Your score is <span id="score"></span></p>
+      <div id="overlay">
+        <div class="modal">
+          <h3>Game is over</h3>
+          <p>Your score is <span id="score"></span></p>
+          <button class="btn" id="closebutton ">X</button>
+        </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
