@@ -34,12 +34,15 @@ const startgame = () => {
   let nextActiveNum = newCircle(activeNum);
   circles[nextActiveNum].classList.toggle("active");
   circles[activeNum].classList.remove("active");
-
   activeNum = nextActiveNum;
   timer = setTimeout(startgame, pace);
   pace -= 10;
   rounds++;
   console.log(rounds);
+  if (rounds >= 2) {
+    modalscore.textContent = `You didnt managed to click a color`;
+    return endGame();
+  }
 };
 
 // start game functionality ends here
