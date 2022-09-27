@@ -43,5 +43,15 @@ const startgame = () => {
 
 // start game functionality ends here
 
+// end game functionality starts here
+
+const endGame = () => {
+  overlay.style.visibility = "visible";
+  clearTimeout(timer);
+  initialMode = false;
+};
+
+// end game functionality ends here
+
 startButton.addEventListener("click", startgame);
 endButton.addEventListener("click", endGame);
