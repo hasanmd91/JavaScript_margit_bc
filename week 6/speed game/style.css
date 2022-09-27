@@ -37,6 +37,7 @@ h1 {
   margin-right: 5px;
   border: none;
   background-color: rgb(168, 116, 20);
+  cursor: pointer;
 }
 .circle.active {
   background-color: orange;

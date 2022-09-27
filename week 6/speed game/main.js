@@ -46,7 +46,7 @@ const startgame = () => {
   timer = setTimeout(startgame, pace);
   pace -= 10;
   rounds++;
-  console.log(rounds);
+
   if (rounds >= 2) {
     return endGame();
   }
@@ -79,11 +79,11 @@ const scoreCount = (i) => {
     score.textContent = count;
 
     if (count >= 1 && count <= 5) {
-      modalscore.textContent = ` You pciked only ${count} color`;
+      modalscore.textContent = ` You picked only ${count} color`;
     } else if (count >= 6 && count <= 15) {
-      modalscore.textContent = ` You pciked  ${count} color well done `;
+      modalscore.textContent = ` You picked  ${count} color well done `;
     } else if (count >= 16) {
-      modalscore.textContent = ` You pciked  ${count} color very good job`;
+      modalscore.textContent = ` You picked  ${count} color very good job`;
     }
   }
 };
