@@ -11,7 +11,14 @@ let activeNum = 0;
 let timer;
 let pace = 1000;
 let rounds = 0;
-let initialMode = false;
+let gameIsOn = false;
+
+//sounds
+const startSound = new Audio("sounds/starter.wav");
+const endGameSound = new Audio("sounds/gameover.wav");
+const click = new Audio("sounds/click.mp3");
+
+console.log(startSound);
 
 // start game functionality starts here
 const randomNumber = (min, max) => {
@@ -23,12 +30,13 @@ const newCircle = (activeNum) => {
   if (activeNum != nextActiveNum) {
     return nextActiveNum;
   } else {
-    return newCircle(activeNum); // return what ??
+    return newCircle(activeNum);
   }
 };
 
 const startgame = () => {
-  initialMode = true;
+  startSound.play();
+  gameIsOn = true;
   startButton.style.display = "none";
   endButton.style.display = "initial";
   let nextActiveNum = newCircle(activeNum);
@@ -40,7 +48,6 @@ const startgame = () => {
   rounds++;
   console.log(rounds);
   if (rounds >= 2) {
-    modalscore.textContent = `You didnt managed to click a color`;
     return endGame();
   }
 };
@@ -50,9 +57,11 @@ const startgame = () => {
 // end game functionality starts here
 
 const endGame = () => {
+  endGameSound.play();
   overlay.style.visibility = "visible";
   clearTimeout(timer);
-  initialMode = false;
+  gameIsOn = false;
+  endGameSound.play();
 };
 
 // end game functionality ends here
@@ -62,15 +71,18 @@ const endGame = () => {
 const scoreCount = (i) => {
   if (i != activeNum) {
     endGame();
+    startSound.stop();
+    endGameSound.play();
   } else {
     count++;
     rounds--;
     score.textContent = count;
-    if (count <= 1) {
+
+    if (count >= 1 && count <= 5) {
       modalscore.textContent = ` You pciked only ${count} color`;
-    } else if (count >= 2 && count <= 5) {
-      modalscore.textContent = ` You pciked  ${count} color`;
-    } else if (count > 6) {
+    } else if (count >= 6 && count <= 15) {
+      modalscore.textContent = ` You pciked  ${count} color well done `;
+    } else if (count >= 16) {
       modalscore.textContent = ` You pciked  ${count} color very good job`;
     }
   }
@@ -78,7 +90,7 @@ const scoreCount = (i) => {
 
 circles.forEach((circle, i) => {
   circle.addEventListener("click", () => {
-    if (circle.click && initialMode === true) {
+    if (circle.click && gameIsOn === true) {
       scoreCount(i);
     }
   });
