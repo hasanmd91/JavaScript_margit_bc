@@ -3,9 +3,10 @@ const endButton = document.querySelector("#end");
 const circles = document.querySelectorAll(".circle");
 const score = document.querySelector("#score");
 const overlay = document.querySelector("#overlay");
-const modal = document.querySelector(".modal");
-const result = document.querySelector("#result");
+const modalscore = document.querySelector("#modalscore");
+const closebutton = document.querySelector("#closebutton");
 
+let count = 0;
 let activeNum = 0;
 let timer;
 let pace = 1000;
@@ -53,5 +54,43 @@ const endGame = () => {
 
 // end game functionality ends here
 
+// circles click functionalty starts here
+
+const scoreCount = (i) => {
+  if (i != activeNum) {
+    endGame();
+  } else {
+    count++;
+    rounds--;
+    score.textContent = count;
+    if (count <= 1) {
+      modalscore.textContent = ` You pciked only ${count} color`;
+    } else if (count >= 2 && count <= 5) {
+      modalscore.textContent = ` You pciked  ${count} color`;
+    } else if (count > 6) {
+      modalscore.textContent = ` You pciked  ${count} color very good job`;
+    }
+  }
+};
+
+circles.forEach((circle, i) => {
+  circle.addEventListener("click", () => {
+    if (circle.click && initialMode === true) {
+      scoreCount(i);
+    }
+  });
+});
+
+// circles click functionalty ends here
+
+// reset game functionalty starts here
+
+const newGame = () => {
+  window.location.reload();
+};
+
+// reset game functionalty ends here
+
 startButton.addEventListener("click", startgame);
 endButton.addEventListener("click", endGame);
+closebutton.addEventListener("click", newGame);
