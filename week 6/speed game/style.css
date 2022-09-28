@@ -78,3 +78,15 @@ h4 {
   padding: 200px;
   border-radius: 10px;
 }
+
+.btn {
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  font-size: 43px;
+}
