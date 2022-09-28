@@ -4,7 +4,7 @@ const circles = document.querySelectorAll(".circle");
 const score = document.querySelector("#score");
 const overlay = document.querySelector("#overlay");
 const modalscore = document.querySelector("#modalscore");
-const closebutton = document.querySelector("#closebutton");
+const closeButton = document.querySelector("#closeButton");
 
 let count = 0;
 let activeNum = 0;
@@ -21,6 +21,11 @@ const click = new Audio("sounds/click.mp3");
 console.log(startSound);
 
 // start game functionality starts here
+
+const playAudio = () => {
+  startSound.play();
+};
+
 const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -35,7 +40,6 @@ const newCircle = (activeNum) => {
 };
 
 const startgame = () => {
-  startSound.play();
   gameIsOn = true;
   startButton.style.display = "none";
   endButton.style.display = "initial";
@@ -90,6 +94,8 @@ const scoreCount = (i) => {
 
 circles.forEach((circle, i) => {
   circle.addEventListener("click", () => {
+    click.play();
+
     if (circle.click && gameIsOn === true) {
       scoreCount(i);
     }
@@ -106,6 +112,7 @@ const newGame = () => {
 
 // reset game functionalty ends here
 
+startButton.addEventListener("click", playAudio);
 startButton.addEventListener("click", startgame);
 endButton.addEventListener("click", endGame);
-closebutton.addEventListener("click", newGame);
+closeButton.addEventListener("click", newGame);
