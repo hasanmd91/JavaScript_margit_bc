@@ -12,10 +12,30 @@ img {
   width: 150px;
   height: 150px;
 }
+.heading {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: coral;
+}
+
+.heading input {
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 35px;
+  padding: 1rem;
+  margin-right: 15px;
+}
+
+.heading h1 {
+  margin-left: 5rem;
+  font-weight: bolder;
+}
 
 .container {
   text-align: center;
-  padding: 2rem;
 }
 
 .cards {
@@ -37,6 +57,12 @@ img {
 
 .imgContainer {
   text-align: center;
+  padding: 15px;
+}
+
+.infoConatiner p {
+  color: black;
+  font-size: 1rem;
 }
 
 .infoConatiner {

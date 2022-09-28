@@ -8,7 +8,7 @@ const createCards = (pokemon) => {
     <img src="./images/ninja-152415_1280.png" alt="" />
   </div>
   <div class="infoConatiner">
-    <p>${pokemon.name}</p>
+    <p>${pokemon.name.toUpperCase()}</p>
   </div>
 </div>`;
 };
