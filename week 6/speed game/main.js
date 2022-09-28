@@ -16,7 +16,7 @@ let gameIsOn = false;
 //sounds
 const startSound = new Audio("sounds/starter.wav");
 const endGameSound = new Audio("sounds/gameover.wav");
-const click = new Audio("sounds/click.mp3");
+const click = new Audio("sounds/click.wav");
 
 console.log(startSound);
 
@@ -75,19 +75,17 @@ const endGame = () => {
 const scoreCount = (i) => {
   if (i != activeNum) {
     endGame();
-    startSound.stop();
-    endGameSound.play();
   } else {
     count++;
     rounds--;
     score.textContent = count;
 
     if (count >= 1 && count <= 5) {
-      modalscore.textContent = ` You picked only ${count} color`;
+      modalscore.textContent = ` You scored only ${count} Goal`;
     } else if (count >= 6 && count <= 15) {
-      modalscore.textContent = ` You picked  ${count} color well done `;
+      modalscore.textContent = ` You scored  ${count} Goal "well done" `;
     } else if (count >= 16) {
-      modalscore.textContent = ` You picked  ${count} color very good job`;
+      modalscore.textContent = ` You scored  ${count} Goal "very good job"`;
     }
   }
 };

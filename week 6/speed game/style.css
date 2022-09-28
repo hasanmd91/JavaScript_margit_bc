@@ -48,9 +48,7 @@ h4 {
   cursor: pointer;
 }
 .circle.active {
-  border: 1px solid #3e9e1b;
-  box-shadow: 5px 5px 5px 5px #3e9e1b, 5px 5px 5px 5px #3e9e1b,
-    5px 5px 5px 5px #3e9e1b, 5px 5px 5px 5px #3e9e1b;
+  box-shadow: 0 0 50px rgb(236, 183, 8);
 }
 
 .play {
