@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+}
+.card {
+  margin: 20px;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.imgContainer {
+  text-align: center;
+}
+
+.infoConatiner {
+  text-align: center;
+}
