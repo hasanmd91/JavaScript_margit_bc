@@ -49,9 +49,9 @@ img {
   display: flex;
 }
 .card {
-  margin: 20px;
+  margin: 25px;
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
