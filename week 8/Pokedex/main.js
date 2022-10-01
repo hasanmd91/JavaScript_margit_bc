@@ -1,7 +1,11 @@
 const cards = document.querySelector(".cards");
 const error = document.querySelector(".err");
-
+const search = document.querySelector("#search");
 let url = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0";
+
+const searchPokemon = (value) => {
+  console.log(value);
+};
 
 const createCards = (pokemon) => {
   cards.insertAdjacentHTML(

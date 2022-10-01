@@ -8,10 +8,6 @@ body {
   font-family: sans-serif;
 }
 
-img {
-  width: 150px;
-  height: 150px;
-}
 .heading {
   padding: 20px;
   width: 100%;
@@ -49,10 +45,17 @@ img {
   display: flex;
 }
 .card {
+  width: 200px;
+  height: 250px;
   margin: 25px;
   border-radius: 5px;
   padding: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
 }
 
 .imgContainer {
