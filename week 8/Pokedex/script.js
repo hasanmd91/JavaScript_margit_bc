@@ -1,17 +1,18 @@
 const cards = document.querySelector(".cards");
 const error = document.querySelector(".err");
 const search = document.querySelector("#search");
+
 let url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
 
-const createCards = (name, image) => {
+const createCards = (pokemon) => {
   cards.insertAdjacentHTML(
     "beforeend",
     `<div class="card">
   <div class="imgContainer">
-    <img src=${image} alt="" />
+    <img src=${pokemon.image} alt="" />
   </div>
   <div class="infoConatiner">
-    <p>${name.toUpperCase()}</p>
+    <p>${pokemon.name.toUpperCase()}</p>
   </div>
 </div>`
   );
@@ -39,9 +40,12 @@ const getPokemon = () => {
             }
           })
           .then((newdata) => {
-            const name = newdata.species.name;
-            const image = newdata.sprites.other.home.front_default;
-            createCards(name, image);
+            let pokemon = {
+              name: newdata.species.name,
+              image: newdata.sprites.other.home.front_default,
+            };
+
+            createCards(pokemon);
           });
       });
     })
