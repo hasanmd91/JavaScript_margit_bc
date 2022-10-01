@@ -12,13 +12,28 @@
       <div class="container">
         <div class="heading">
           <h1>Pokedex</h1>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search"
-            oninput="searchPokemon(this.value)"
-            onchange="searchPokemon(this.value)"
-          />
+          <div class="genButtons">
+            <button id="genButton">Gen 1</button>
+            <button id="genButton">Gen 2</button>
+            <button id="genButton">Gen 3</button>
+            <button id="genButton">Gen 4</button>
+            <button id="genButton">Gen 5</button>
+            <button id="genButton">Gen 6</button>
+            <button id="genButton">Gen 7</button>
+            <button id="genButton">Gen 8</button>
+          </div>
+          <div class="msg">
+            <p>To see pokemons, choose generations first....</p>
+          </div>
+          <div>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search"
+              oninput="searchPokemon(this.value)"
+              onchange="searchPokemon(this.value)"
+            />
+          </div>
         </div>
         <div class="err"></div>
         <div class="cards"></div>
