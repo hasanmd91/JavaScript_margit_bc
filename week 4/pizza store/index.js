@@ -52,6 +52,7 @@ const orderPizza = (e) => {
   orderDetails.innerHTML = `
   <div class="newDetails">  <h2> Thank you for order </h2> 
   <p> Customer name : <span> ${customerName} </span>  </p>
+  <p> Pizza size : <span> ${pizzaSizes} </span>  </p>
   <p> Pizza ingredients: <span> ${pizzaToppings.join()}  </span>  </p>
   <p> Delivery Method: <span>  ${deliveryMethod}   </span>  </p>
   <p>  Total price: <span> ${pizzaPrice} €  </span>  </p>

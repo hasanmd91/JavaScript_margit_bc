@@ -9,30 +9,19 @@
 
 html {
   font-family: "Roboto" sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  color: azure;
 }
 
 body {
   background-color: aliceblue;
+  background-image: url(images/tasty-pepperoni-pizza-black-concrete-background_79782-2287.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.banner {
-  width: 100%;
-  border-radius: 5px;
-  height: 50vh;
-}
-
-.banner img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
 .container {
   display: flex;
   width: 100%;

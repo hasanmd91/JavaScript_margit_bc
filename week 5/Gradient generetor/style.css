@@ -5,13 +5,13 @@
 }
 
 .container {
-  height: 100vh;
   display: flex;
   background-image: linear-gradient(
     to top,
     rgb(250, 250, 110),
     rgb(196, 236, 116)
   );
+  min-height: 100vh;
 }
 
 input[type="color"] {
@@ -25,13 +25,13 @@ input[type="color"] {
 }
 
 .left_container {
-  height: 100vh;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-basis: 25%;
+  width: 300px;
+  padding: 15px;
 }
 
 .input-container {
