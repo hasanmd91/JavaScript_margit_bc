@@ -43,6 +43,7 @@ h1 {
 }
 
 .heading input {
+  visibility: hidden;
   border: none;
   border-radius: 5px;
   width: 300px;
