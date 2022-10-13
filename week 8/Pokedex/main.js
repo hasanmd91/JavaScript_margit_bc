@@ -1,84 +1,63 @@
 const cards = document.querySelector(".cards");
 const error = document.querySelector(".err");
 const search = document.querySelector("#search");
+const result = document.querySelector("#result");
 const buttons = document.querySelectorAll(".genButton");
-let url = "https://pokeapi.co/api/v2/pokemon?limit=500&offset=0";
+const card2 = document.querySelector(".card2");
+let datas = [];
+let generations = [
+  { limit: 151, offset: 0 },
+  { limit: 100, offset: 151 },
+  { limit: 135, offset: 251 },
+  { limit: 107, offset: 386 },
+  { limit: 156, offset: 493 },
+  { limit: 72, offset: 649 },
+  { limit: 88, offset: 721 },
+  { limit: 96, offset: 809 },
+  { limit: 3, offset: 905 },
+];
 
-let pokemonsArray = [];
-
-const getPokemon = () => {
-  fetch(url)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("data could not be fetched");
-      } else {
-        return res.json();
-      }
-    })
-    .then((data) => {
-      const pokemonArray = data.results;
-      console.log(pokemonArray);
-      pokemonArray.map((pokemon) => {
-        fetch(pokemon.url)
-          .then((result) => {
-            if (!result.ok) {
-              throw new Error("could not fetch new url");
-            } else {
-              return result.json();
-            }
-          })
-          .then((data) => {
-            let pokemon = {
-              name: data.species.name,
-              image: data.sprites.other.home.front_default,
-              type: data.types[0].type.name,
-              id: data.id,
-            };
-
-            createPokemons(pokemon);
-          });
-      });
-    })
-    .catch((err) => {
-      console.log(err);
+const displayPokemon = (pokemonss) => {
+  cards.innerHTML = "";
+  Promise.all(pokemonss).then((result) => {
+    result.map((data) => {
+      cards.innerHTML += `<div class="card">
+      <div class="imgContainer">
+        <img src=${
+          data.sprites.other["official-artwork"].front_default
+        } alt="" />
+      </div>
+      <div class="infoConatiner">
+        <p>${data.name.toUpperCase()}</p>
+      </div>
+    </div>`;
     });
-};
-
-getPokemon();
-
-const rendercards = (newPokemonsArray) => {
-  newPokemonsArray.map((pokemon) => {
-    console.log(newPokemonsArray.length);
-    cards.innerHTML += `<div class="card">
-    <div class="imgContainer">
-      <img src=${pokemon.image} alt="" />
-    </div>
-    <div class="infoConatiner">
-      <p>${pokemon.name.toUpperCase()}</p>
-      <p>${pokemon.type}</p>
-
-    </div>
-  </div>`;
   });
 };
 
-const createPokemons = (pokemon) => {
-  pokemonsArray.push(pokemon);
-};
+const fetchPokemons = async (btn) => {
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon?limit=${generations[btn].limit}&offset=${generations[btn].offset}`
+  )
+    .then((res) => res.json())
+    .then((data) => data.results);
 
-const createCards = () => {
-  const newPokemonsArray = pokemonsArray.filter((pokemonGen) => {
-    if (pokemonGen.id <= 151) {
-      return pokemonGen;
-    }
+  const pokemons = await response.map((poke) => {
+    return fetch(poke.url)
+      .then((res) => res.json())
+      .then((data) => data);
   });
 
-  rendercards(newPokemonsArray);
+  displayPokemon(pokemons);
+  setTimeout(() => {
+    result.innerHTML = `${generations[btn].limit} pokemons were found...`;
+    search.style.visibility = "visible";
+  }, 1000);
 };
 
 buttons.forEach((button) => {
+  const btn = button.getAttribute("data-value");
   button.addEventListener("click", () => {
-    text = button.textContent;
-    createCards();
+    fetchPokemons(btn);
   });
 });

@@ -46,8 +46,8 @@ h1 {
   visibility: hidden;
   border: none;
   border-radius: 5px;
-  width: 300px;
-  height: 35px;
+  width: 500px;
+  height: 30px;
   padding: 1.5rem;
 }
 .err {
@@ -56,7 +56,7 @@ h1 {
 
 .container {
   text-align: center;
-  background-image: url("images/pexels-ákos-szabó-440731.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2018/03/02/19/21/nature-3194001_960_720.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,11 +81,11 @@ h1 {
   margin: 25px;
   border-radius: 5px;
   padding: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: aliceblue;
+  box-shadow: rgba(243, 239, 239, 0.35) 0px 5px 15px;
+  background-color: rgba(200, 202, 202, 0.92);
 }
 
-.card img {
+.imgContainer img {
   object-fit: cover;
   width: 100%;
 }
@@ -102,4 +102,44 @@ h1 {
 
 .infoConatiner {
   text-align: center;
+}
+
+.imgContainer img:hover {
+  animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(0deg);
+  }
 }
