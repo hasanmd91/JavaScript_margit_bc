@@ -30,6 +30,7 @@ const displayPokemon = (pokemonss) => {
       <div class="infoConatiner">
         <p>${data.name.toUpperCase()}</p>
         
+        
       </div>
     </div>`;
     });
