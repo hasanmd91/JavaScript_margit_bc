@@ -80,7 +80,7 @@ h1 {
   height: 250px;
   margin: 25px;
   border-radius: 5px;
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: rgba(243, 239, 239, 0.35) 0px 5px 15px;
   background-color: rgba(200, 202, 202, 0.92);
 }
@@ -95,7 +95,6 @@ h1 {
 }
 
 .imgContainer {
-  text-align: center;
   padding: 15px;
 }
 
@@ -153,4 +152,17 @@ h1 {
   width: 25px;
   height: 25px;
   margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  input {
+    max-width: 200px;
+  }
+  .card {
+    padding: 1rem;
+  }
+
+  .imgContainer {
+    padding: 20px;
+  }
 }
