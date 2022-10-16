@@ -147,3 +147,10 @@ h1 {
     transform: translate(1px, -2px) rotate(0deg);
   }
 }
+
+.icons {
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
