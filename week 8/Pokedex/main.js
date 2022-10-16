@@ -3,9 +3,7 @@ const error = document.querySelector(".err");
 const search = document.querySelector("#search");
 const result = document.querySelector("#result");
 const buttons = document.querySelectorAll(".genButton");
-const card2 = document.querySelector(".card2");
-let icon;
-let datas = [];
+
 let generations = [
   { limit: 151, offset: 0 },
   { limit: 100, offset: 151 },
@@ -17,7 +15,7 @@ let generations = [
   { limit: 96, offset: 809 },
   { limit: 3, offset: 905 },
 ];
-const getTypeImg = (type) => {
+const getIcons = (type) => {
   switch (type) {
     case "fire":
       return "https://upload.wikimedia.org/wikipedia/commons/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg";
@@ -59,7 +57,6 @@ const getTypeImg = (type) => {
       return "#";
   }
 };
-
 search.addEventListener("keyup", (e) => {
   let input = e.target.value.toLowerCase();
   const pokeCards = document.querySelectorAll(".card");
@@ -74,7 +71,9 @@ const displayPokemon = (pokemonss) => {
   cards.innerHTML = "";
   Promise.all(pokemonss).then((result) => {
     result.map((data) => {
-      cards.innerHTML += `<div class="card">
+      cards.insertAdjacentHTML(
+        "beforeend",
+        `<div class="card">
       <div class="imgContainer">
         <img src=${
           data.sprites.other["official-artwork"].front_default
@@ -85,11 +84,12 @@ const displayPokemon = (pokemonss) => {
         <div>${data.types
           .map(
             (type) =>
-              '<img src="' + getTypeImg(type.type.name) + '" class="icons"/>'
+              '<img src="' + getIcons(type.type.name) + '" class="icons"/>'
           )
           .join("")} </div>
       </div>
-    </div>`;
+    </div>`
+      );
     });
   });
 };
@@ -111,7 +111,7 @@ const fetchPokemons = async (btn) => {
   setTimeout(() => {
     result.innerHTML = `${generations[btn].limit} pokemons were found...`;
     search.style.visibility = "visible";
-  }, 1000);
+  }, 500);
 };
 
 buttons.forEach((button) => {
