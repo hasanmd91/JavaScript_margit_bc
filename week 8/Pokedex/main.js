@@ -17,6 +17,16 @@ let generations = [
   { limit: 3, offset: 905 },
 ];
 
+search.addEventListener("keyup", (e) => {
+  let input = e.target.value.toLowerCase();
+  const pokeCards = document.querySelectorAll(".card");
+  pokeCards.forEach((element) => {
+    let pokeManName = element.children[1].children[0].innerHTML.toLowerCase();
+    const isVisible = pokeManName.includes(input);
+    element.classList.toggle("hide", !isVisible);
+  });
+});
+
 const displayPokemon = (pokemonss) => {
   cards.innerHTML = "";
   Promise.all(pokemonss).then((result) => {
@@ -28,9 +38,7 @@ const displayPokemon = (pokemonss) => {
         } alt="" />
       </div>
       <div class="infoConatiner">
-        <p>${data.name.toUpperCase()}</p>
-        
-        
+        <p>${data.name[0].toUpperCase() + data.name.slice(1)}</p>
       </div>
     </div>`;
     });

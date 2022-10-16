@@ -85,6 +85,10 @@ h1 {
   background-color: rgba(200, 202, 202, 0.92);
 }
 
+.hide {
+  display: none;
+}
+
 .imgContainer img {
   object-fit: cover;
   width: 100%;

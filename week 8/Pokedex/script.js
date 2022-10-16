@@ -16,15 +16,13 @@ let generations = [
   { limit: 3, offset: 905 },
 ];
 
-let pokemons = [];
-
-search.addEventListener("input", (e) => {
+search.addEventListener("keyup", (e) => {
   let input = e.target.value.toLowerCase();
-  console.log(input);
   const pokeCards = document.querySelectorAll(".card");
   pokeCards.forEach((element) => {
-    const isVisible = element.children[1].children[0].innerHTML.includes(input);
-    element.classList.toggle("hide", isVisible);
+    let pokeManName = element.children[1].children[0].innerHTML.toLowerCase();
+    const isVisible = pokeManName.includes(input);
+    element.classList.toggle("hide", !isVisible);
   });
 });
 
@@ -37,11 +35,7 @@ const createPokemons = (pokemons) => {
       </div>
       <div class="infoConatiner">
         <p>${pokemon.name.toUpperCase()}</p>
-        <p>  Type: <img src =""/>${pokemon.type
-          .map((type) => type.type.name)
-          .join(", ")}</p>
-        
-        
+        <p> Type:${pokemon.type.map((type) => type.type.name).join(", ")}</p>
       </div>
     </div>`;
   });
@@ -59,7 +53,7 @@ const fetchPokemons = async (btn) => {
       return Promise.all(results.map((res) => axios.get(res.url)));
     });
 
-  pokemons = response.map((data) => {
+  let pokemons = response.map((data) => {
     return {
       name: data.data.name,
       image: data.data.sprites.other["official-artwork"].front_default,
